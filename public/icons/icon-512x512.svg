@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000000"/>
+  <defs>
+    <filter
+      id="neon-glow"
+      x="-50%"
+      y="-50%"
+      width="200%"
+      height="200%"
+      colorInterpolationFilters="sRGB"
+    >
+      <feDropShadow dx="0" dy="0" stdDeviation="5" floodColor="white" floodOpacity="0.9" />
+      <feDropShadow dx="0" dy="0" stdDeviation="10" floodColor="white" floodOpacity="0.6" />
+      <feDropShadow dx="0" dy="0" stdDeviation="15" floodColor="white" floodOpacity="0.3" />
+    </filter>
+  </defs>
+  
+  <!-- JC letters -->
+  <path
+    d="M 180 120 L 180 300 Q 180 350 100 350"
+    stroke="white"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#neon-glow)"
+  />
+  <path
+    d="M 280 130 Q 200 130 200 240 Q 200 350 280 350"
+    stroke="white"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#neon-glow)"
+  />
+  
+  <!-- Square outline -->
+  <path
+    d="M 80 400 L 430 400 L 430 80 L 80 80 L 80 430 L 430 430 L 430 400"
+    stroke="white"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#neon-glow)"
+  />
+</svg>
