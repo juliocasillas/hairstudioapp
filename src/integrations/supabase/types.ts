@@ -378,6 +378,36 @@ export type Database = {
         }
         Relationships: []
       }
+      role_change_audit: {
+        Row: {
+          changed_at: string | null
+          changed_by: string
+          changed_user_id: string
+          id: string
+          new_role: Database["public"]["Enums"]["user_role"]
+          old_role: Database["public"]["Enums"]["user_role"] | null
+          reason: string | null
+        }
+        Insert: {
+          changed_at?: string | null
+          changed_by: string
+          changed_user_id: string
+          id?: string
+          new_role: Database["public"]["Enums"]["user_role"]
+          old_role?: Database["public"]["Enums"]["user_role"] | null
+          reason?: string | null
+        }
+        Update: {
+          changed_at?: string | null
+          changed_by?: string
+          changed_user_id?: string
+          id?: string
+          new_role?: Database["public"]["Enums"]["user_role"]
+          old_role?: Database["public"]["Enums"]["user_role"] | null
+          reason?: string | null
+        }
+        Relationships: []
+      }
       services: {
         Row: {
           category: string
@@ -531,7 +561,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_current_user_role: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
+      is_valid_role: {
+        Args: { role_input: string }
+        Returns: boolean
+      }
     }
     Enums: {
       user_role: "client" | "stylist" | "admin" | "receptionist" | "developer"
